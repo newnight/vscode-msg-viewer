@@ -1,0 +1,61 @@
+{
+  "name": "msg-viewer",
+  "displayName": "open outlook msg file in vscode",
+  "description": "msg-viewer",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "repository": "https://github.com/newnight/vscode-msg-viewer",
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/icon.png",
+  "preview": true,
+  "keywords": [
+    "msg",
+    "outlook",
+    "email",
+    "newnight"
+  ],
+  "publisher": "newnight",
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "newnight.msg-viewer",
+        "displayName": "Outlook MSG Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.msg"
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package --yarn --dependencies",
+    "publish": "yarn run package && vsce publish",
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "@vscode/test-electron": "^2.3.2",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {}
+}

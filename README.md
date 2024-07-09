@@ -1,0 +1,5 @@
+# README
+
+msg viewer
+
+**Enjoy!**

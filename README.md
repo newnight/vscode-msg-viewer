@@ -1,5 +1,3 @@
 # README
 
-msg viewer
-
-**Enjoy!**
+TBD
